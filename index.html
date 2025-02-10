@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parking Lot Booking</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-white" href="#">EASY <span class="text-warning">PARK</span></a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link text-white" href="#">About Us</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Plan</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Testimonials</a></li>
+            <li class="nav-item">
+              <button class="btn btn-warning ms-lg-3">Login</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-grow-1 d-flex flex-column">
+    <section class="hero text-light w-100">
+      <div class="container d-flex flex-column justify-content-center align-items-center">
+        <h1>Welcome to <span class="text-warning d-block my-4">EASY PARK</span></h1>
+        <p>Find and book a parking spot easily.</p>
+      </div>
+    </section>
+
+    <section class="booking-form text-light py-4 mt-auto glossy-bg p-4 rounded shadow-lg"
+      aria-labelledby="booking-title">
+      <div class="container-fluid">
+        <h2 id="booking-title" class="text-center mb-5 fw-bold text-warning">Book Your Parking Spot</h2>
+        <form class="text-align-start">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-2">
+              <label for="location" class="form-label fw-bold text-uppercase">Select Location</label>
+              <select id="location" class="form-select py-2">
+                <option>Select Location</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold text-uppercase">Check In</label>
+              <div class="row g-2">
+                <div class="col-6">
+                  <input type="date" id="check-in-date" class="form-control py-2" aria-label="Check-in Date">
+                </div>
+                <div class="col-6">
+                  <input type="time" id="check-in-time" class="form-control py-2" aria-label="Check-in Time">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold text-uppercase">Check Out</label>
+              <div class="row g-2">
+                <div class="col-6">
+                  <input type="date" id="check-out-date" class="form-control py-2" aria-label="Check-out Date">
+                </div>
+                <div class="col-6">
+                  <input type="time" id="check-out-time" class="form-control py-2" aria-label="Check-out Time">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label for="promo-code" class="form-label fw-bold text-uppercase">Promo Code
+                <span class="text-lowercase text-secondary">(optional)</span></label>
+              <input type="text" id="promo-code" class="form-control py-2" aria-label="Promo Code">
+            </div>
+            <div class="col-md-2 text-center">
+              <button class="btn btn-warning book-now px-4 py-2 mt-3 text-uppercase fw-bold" type="submit">Book
+                Now</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script>
+    const parkingLocations = [
+      { "id": 1, "name": "CBD Public Parking", "location": "Kenyatta Avenue" },
+      { "id": 2, "name": "City Hall Parking", "location": "City Hall Way" },
+      { "id": 3, "name": "Globe Roundabout Parking", "location": "Ngara Road" },
+      { "id": 4, "name": "Hailesellasie Parking Lot", "location": "Hailesellasie Avenue" },
+      { "id": 5, "name": "Uhuru Park Parking", "location": "Uhuru Highway" },
+      { "id": 6, "name": "Sarit Centre Parking", "location": "Westlands" },
+      { "id": 7, "name": "The Junction Mall Parking", "location": "Ngong Road" },
+      { "id": 8, "name": "Two Rivers Mall Parking", "location": "Limuru Road" },
+      { "id": 9, "name": "Westgate Mall Parking", "location": "Mwanzi Road, Westlands" },
+      { "id": 10, "name": "Garden City Mall Parking", "location": "Thika Road" },
+      { "id": 11, "name": "JKIA Airport Parking", "location": "Jomo Kenyatta International Airport" },
+      { "id": 12, "name": "Wilson Airport Parking", "location": "Lang'ata Road" },
+      { "id": 13, "name": "SGR Terminus Parking", "location": "Syokimau" },
+      { "id": 14, "name": "KICC Parking", "location": "Harambee Avenue" },
+      { "id": 15, "name": "Hilton Hotel Parking", "location": "Mama Ngina Street" },
+      { "id": 16, "name": "Yaya Centre Parking", "location": "Kilimani" },
+      { "id": 17, "name": "Village Market Parking", "location": "Gigiri" },
+      { "id": 18, "name": "Lavington Mall Parking", "location": "James Gichuru Road" },
+      { "id": 19, "name": "Aga Khan Hospital Parking", "location": "3rd Parklands Avenue" },
+      { "id": 20, "name": "Nairobi Hospital Parking", "location": "Argwings Kodhek Road" },
+      { "id": 21, "name": "Kenyatta National Hospital Parking", "location": "Hospital Road" }
+    ];
+
+    const locationSelect = document.getElementById("location");
+
+    parkingLocations.forEach(parking => {
+      let option = document.createElement("option");
+      option.value = parking.id;
+      option.textContent = `${parking.name} - ${parking.location}`;
+      locationSelect.appendChild(option);
+    });
+
+    const bookNowBtn = document.querySelector(".book-now");
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const locationId = document.getElementById("location").value;
+      const locationName = parkingLocations.find(parking => parking.id == locationId).name;
+      const checkInDate = document.getElementById("check-in-date").value;
+      const checkInTime = document.getElementById("check-in-time").value;
+      const checkOutDate = document.getElementById("check-out-date").value;
+      const checkOutTime = document.getElementById("check-out-time").value;
+      const promoCode = document.getElementById("promo-code").value;
+
+      if (!locationId || !checkInDate || !checkInTime || !checkOutDate || !checkOutTime) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      alert(`Parking booked successfully!\nLocation: ${locationName}\nCheck-in: ${checkInDate} ${checkInTime}\nCheck-out: ${checkOutDate} ${checkOutTime}\nPromo Code: ${promoCode || "None"}`);
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

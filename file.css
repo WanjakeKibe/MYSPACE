@@ -9,8 +9,22 @@ body {
 body {
     height: 100%;
     margin: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(imgs/GettyImages-1277905184-1.webp);
-    background-size: auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/hero-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.logo {
+    font-size: 2rem;
+    background-color: #fbcc22;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-family: 'Manrope', sans-serif;
+    text-transform: uppercase;
 }
 
 
@@ -22,6 +36,7 @@ ul {
     overflow: hidden;
     justify-content: space-between;
 }
+
 li {
     float: left;
     font-size: large;
@@ -49,7 +64,7 @@ li a:hover {
 }
 
 .hero-text {
-    text-align: center;
+    text-align: left;
     position: absolute;
     top: 50%;
     left: 50%;

@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "name": "CBD Public Parking",
+    "location": "Kenyatta Avenue"
+  },
+  {
+    "id": 2,
+    "name": "City Hall Parking",
+    "location": "City Hall Way"
+  },
+  {
+    "id": 3,
+    "name": "Globe Roundabout Parking",
+    "location": "Ngara Road"
+  },
+  {
+    "id": 4,
+    "name": "Hailesellasie Parking Lot",
+    "location": "Hailesellasie Avenue"
+  },
+  {
+    "id": 5,
+    "name": "Uhuru Park Parking",
+    "location": "Uhuru Highway"
+  },
+  {
+    "id": 6,
+    "name": "Sarit Centre Parking",
+    "location": "Westlands"
+  },
+  {
+    "id": 7,
+    "name": "The Junction Mall Parking",
+    "location": "Ngong Road"
+  },
+  {
+    "id": 8,
+    "name": "Two Rivers Mall Parking",
+    "location": "Limuru Road"
+  },
+  {
+    "id": 9,
+    "name": "Westgate Mall Parking",
+    "location": "Mwanzi Road, Westlands"
+  },
+  {
+    "id": 10,
+    "name": "Garden City Mall Parking",
+    "location": "Thika Road"
+  },
+  {
+    "id": 11,
+    "name": "JKIA Airport Parking",
+    "location": "Jomo Kenyatta International Airport"
+  },
+  {
+    "id": 12,
+    "name": "Wilson Airport Parking",
+    "location": "Lang'ata Road"
+  },
+  {
+    "id": 13,
+    "name": "SGR Terminus Parking",
+    "location": "Syokimau"
+  },
+  {
+    "id": 14,
+    "name": "KICC Parking",
+    "location": "Harambee Avenue"
+  },
+  {
+    "id": 15,
+    "name": "Hilton Hotel Parking",
+    "location": "Mama Ngina Street"
+  },
+  {
+    "id": 16,
+    "name": "Yaya Centre Parking",
+    "location": "Kilimani"
+  },
+  {
+    "id": 17,
+    "name": "Village Market Parking",
+    "location": "Gigiri"
+  },
+  {
+    "id": 18,
+    "name": "Lavington Mall Parking",
+    "location": "James Gichuru Road"
+  },
+  {
+    "id": 19,
+    "name": "Aga Khan Hospital Parking",
+    "location": "3rd Parklands Avenue"
+  },
+  {
+    "id": 20,
+    "name": "Nairobi Hospital Parking",
+    "location": "Argwings Kodhek Road"
+  },
+  {
+    "id": 21,
+    "name": "Kenyatta National Hospital Parking",
+    "location": "Hospital Road"
+  }
+]
