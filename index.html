@@ -15,7 +15,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand fw-bold text-white" href="#">EASY <span class="text-warning">PARK</span></a>
+        <a class="navbar-brand fw-bold text-white" href="./index.html">EASY <span class="text-warning">PARK</span></a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -35,10 +35,10 @@
   </header>
 
   <main class="flex-grow-1 d-flex flex-column">
-    <section class="hero text-light w-100">
-      <div class="container d-flex flex-column justify-content-center align-items-center">
-        <h1>Welcome to <span class="text-warning d-block my-4">EASY PARK</span></h1>
-        <p>Find and book a parking spot easily.</p>
+    <section class="hero text-light ">
+      <div class="container d-flex flex-column justify-content-center align-items-start min-vh-50">
+        <h1 class="text-start">Welcome to <span class="text-warning d-block my-4">EASY PARK</span></h1>
+        <p class="text-start">Find and book a parking spot easily.</p>
       </div>
     </section>
 
@@ -46,38 +46,38 @@
       aria-labelledby="booking-title">
       <div class="container-fluid">
         <h2 id="booking-title" class="text-center mb-5 fw-bold text-warning">Book Your Parking Spot</h2>
-        <form class="text-align-start">
+        <form class="text-align-start needs-validation" novalidate>
           <div class="row g-3 align-items-center">
             <div class="col-md-2">
-              <label for="location" class="form-label fw-bold text-uppercase">Select Location</label>
+              <label for="location" class="form-label fw-bold text-uppercase text-start d-block">Select Location</label>
               <select id="location" class="form-select py-2">
                 <option>Select Location</option>
               </select>
             </div>
             <div class="col-md-3">
-              <label class="form-label fw-bold text-uppercase">Check In</label>
+              <label class="form-label fw-bold text-uppercase text-start d-block">Check In</label>
               <div class="row g-2">
                 <div class="col-6">
-                  <input type="date" id="check-in-date" class="form-control py-2" aria-label="Check-in Date">
+                  <input type="date" id="check-in-date" class="form-control py-2" aria-label="Check-in Date" required>
                 </div>
                 <div class="col-6">
-                  <input type="time" id="check-in-time" class="form-control py-2" aria-label="Check-in Time">
+                  <input type="time" id="check-in-time" class="form-control py-2" aria-label="Check-in Time" required>
                 </div>
               </div>
             </div>
             <div class="col-md-3">
-              <label class="form-label fw-bold text-uppercase">Check Out</label>
+              <label class="form-label fw-bold text-uppercase text-start d-block">Check Out</label>
               <div class="row g-2">
                 <div class="col-6">
-                  <input type="date" id="check-out-date" class="form-control py-2" aria-label="Check-out Date">
+                  <input type="date" id="check-out-date" class="form-control py-2" aria-label="Check-out Date" required>
                 </div>
                 <div class="col-6">
-                  <input type="time" id="check-out-time" class="form-control py-2" aria-label="Check-out Time">
+                  <input type="time" id="check-out-time" class="form-control py-2" aria-label="Check-out Time" required>
                 </div>
               </div>
             </div>
             <div class="col-md-2">
-              <label for="promo-code" class="form-label fw-bold text-uppercase">Promo Code
+              <label for="promo-code" class="form-label fw-bold text-uppercase text-start d-block">Promo Code
                 <span class="text-lowercase text-secondary">(optional)</span></label>
               <input type="text" id="promo-code" class="form-control py-2" aria-label="Promo Code">
             </div>
@@ -90,6 +90,27 @@
       </div>
     </section>
   </main>
+  <!-- Bootstrap Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="bookingModalLabel">Booking Confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Location:</strong> <span id="modal-location"></span></p>
+          <p><strong>Check-in:</strong> <span id="modal-checkin"></span></p>
+          <p><strong>Check-out:</strong> <span id="modal-checkout"></span></p>
+          <p><strong>Promo Code:</strong> <span id="modal-promo"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     const parkingLocations = [
       { "id": 1, "name": "CBD Public Parking", "location": "Kenyatta Avenue" },
@@ -142,7 +163,14 @@
         return;
       }
 
-      alert(`Parking booked successfully!\nLocation: ${locationName}\nCheck-in: ${checkInDate} ${checkInTime}\nCheck-out: ${checkOutDate} ${checkOutTime}\nPromo Code: ${promoCode || "None"}`);
+      document.getElementById("modal-location").textContent = locationName;
+      document.getElementById("modal-checkin").textContent = `${checkInDate} ${checkInTime}`;
+      document.getElementById("modal-checkout").textContent = `${checkOutDate} ${checkOutTime}`;
+      document.getElementById("modal-promo").textContent = promoCode;
+
+      // Show Bootstrap modal
+      let bookingModal = new bootstrap.Modal(document.getElementById("bookingModal"));
+      bookingModal.show();
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
