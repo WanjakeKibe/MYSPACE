@@ -23,7 +23,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link text-white" href="#">About Us</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="{{url_for('main.about_us')}}">About Us</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#">Plan</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#">Testimonials</a></li>
             <li class="nav-item">
@@ -52,7 +52,7 @@
             <div class="col-md-2">
               <label for="location" class="form-label fw-bold text-uppercase text-start d-block">Select Location</label>
               <select id="location" class="form-select py-2">
-                <option>Select Location</option>
+                <option disabled>Select Location</option>
               </select>
             </div>
             <div class="col-md-3">
