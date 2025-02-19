@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}"> -->
+     <link rel="stylesheet" href="../static/css/login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <form action="#" method="POST">
+            <h2>Login</h2>
+            <div class="input-container">
+                <label for="firstname">Firstname:</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Enter your firstname" required>
+            </div>
+            <div class="input-container">
+                <label for="lastname">lastname:</label>
+                <input type="lastname" id="lastname" name="password" placeholder="lastname" required>
+            </div>
+
+            <div class="input-container">
+                <label for="email">Email </label>
+                <input id="email" type="email" placeholder="johndoe@gmail.com" required>
+            </div>
+
+            <div class="input-container">
+                <label for="password">Create Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="input-container">
+                <label for="password"> Confirm Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+</body>
+
+</html>
