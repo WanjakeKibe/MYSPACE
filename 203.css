@@ -54,16 +54,16 @@ p {
     margin-bottom: 20px;
 }
 
-input {
+/* input {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
-}
+} */
 
-.remember-me {
+/* .remember-me {
     display: flex;
     align-items: center;
     margin: 10px 0;
@@ -71,11 +71,11 @@ input {
 
 .remember-me input {
     margin-right: 8px;
-}
+} */
 
 button {
     width: 100%;
-    padding: 12px;
+
     background: #24615D;
     color: white;
     border: none;

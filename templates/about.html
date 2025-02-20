@@ -50,9 +50,9 @@
       transform: translateY(-10px);
     }
 
-    .team-card img {
+    /* .team-card img {
       border-radius: 50%;
-    }
+    } */
 
     /* Footer */
     footer {
@@ -73,7 +73,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link text-white" href="{{url_for('main.about_us')}}">About Us</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="{{url_for('main.about')}}">About Us</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#">Plan</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#">Testimonials</a></li>
             <li class="nav-item">
@@ -88,8 +88,8 @@
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-content">
-      <h1 class="display-4">About Us</h1>
-      <p class="lead">Innovating the Parking Experience</p>
+      <h1 class="display-4 fw-bold fs-1">About Us</h1>
+      <p class="lead fs-3 mt-3">Innovating the Parking Experience</p>
     </div>
   </section>
 
@@ -104,13 +104,13 @@
     </div>
     <div class="row align-items-center">
       <div class="col-md-6">
-        <img src="../static/img/GettyImages-1277905184-1.webp" alt="Our Office" class="img-fluid rounded">
+        <img src="../static/img/about.png" alt="Our Office" class="img-fluid rounded">
       </div>
       <div class="col-md-6">
-        <h3>Our Mission</h3>
-        <p>To provide a reliable, easy-to-use parking solution that saves time and enhances the urban experience.</p>
-        <h3>Our Vision</h3>
-        <p>We envision a future where finding and booking a parking space is a seamless, stress-free experience for
+        <h3 class="fw-bold">Our Mission</h3>
+        <p class="text-secondary">To provide a reliable, easy-to-use parking solution that saves time and enhances the urban experience.</p>
+        <h3 class="fw-bold">Our Vision</h3>
+        <p class="text-secondary">We envision a future where finding and booking a parking space is a seamless, stress-free experience for
           everyone.</p>
       </div>
     </div>
@@ -127,11 +127,11 @@
       </div>
       <div class="row">
         <!-- Team Member 1 -->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 h-50">
           <div class="card team-card shadow">
-            <img src="team1.jpg" class="card-img-top" alt="Team Member 1">
+            <img src="{{url_for('static', filename='img/team1.jpg')}}" class="card-img-top" alt="Team Member 1">
             <div class="card-body">
-              <h5 class="card-title">John Doe</h5>
+              <h5 class="card-title">John Kibe</h5>
               <p class="card-text text-muted">CEO & Founder</p>
             </div>
           </div>
@@ -139,7 +139,7 @@
         <!-- Team Member 2 -->
         <div class="col-md-4 mb-4">
           <div class="card team-card shadow">
-            <img src="team2.jpg" class="card-img-top" alt="Team Member 2">
+            <img src="{{url_for('static', filename='img/team2.jpg')}}" class="card-img-top" alt="Team Member 2">
             <div class="card-body">
               <h5 class="card-title">Jane Smith</h5>
               <p class="card-text text-muted">CTO</p>
@@ -149,10 +149,10 @@
         <!-- Team Member 3 -->
         <div class="col-md-4 mb-4">
           <div class="card team-card shadow">
-            <img src="team3.jpg" class="card-img-top" alt="Team Member 3">
+            <img src="{{url_for('static', filename='img/team3.jpg')}}" class="card-img-top" alt="Team Member 3">
             <div class="card-body">
-              <h5 class="card-title">Emily Johnson</h5>
-              <p class="card-text text-muted">Marketing Lead</p>
+              <h5 class="card-title fw-3">Emily Johnson</h5>
+              <p class="card-text text-secondary">Marketing Lead</p>
             </div>
           </div>
         </div>

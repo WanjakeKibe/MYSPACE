@@ -10,9 +10,9 @@ def home():
     return render_template('index.html')
 
 
-@main.route('/aboutus')
-def about_us():
-    return render_template('aboutus.html')
+@main.route('/about')
+def about():
+    return render_template('about.html')
 
 
 # @main.route('/api/parking-spots', methods=['GET'])
