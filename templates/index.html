@@ -81,12 +81,17 @@
             <input type="text" id="promo-code" class="form-control py-2" aria-label="Promo Code">
           </div>
           <div class="col-md-2 text-center">
+            {% if 'user_id' in session %}
             <button id="book-button" class="btn btn-warning book-now px-4 py-2 mt-3 text-uppercase fw-bold"
               type="submit">
               <span id="spinner" class="spinner-border spinner-border-sm d-none" role="status"
                 aria-hidden="true"></span>
               <span id="button-text">Book Now</span>
             </button>
+            {% else %}
+            <a href="{{ url_for('main.login') }}"
+              class="btn btn-warning book-now px-4 py-2 mt-3 text-uppercase fw-bold">Login to Book</a>
+            {% endif %}
           </div>
         </div>
       </form>
@@ -102,6 +107,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <p><strong>Name:</strong> {% if user %} {{ user.fullname }} {% else %} Guest {% endif %}</p>
         <p><strong>Location:</strong> <span id="modal-location"></span></p>
         <p><strong>Check-in:</strong> <span id="modal-checkin"></span></p>
         <p><strong>Check-out:</strong> <span id="modal-checkout"></span></p>

@@ -114,3 +114,20 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
     .then(data => alert(data.message))
     .catch(err => console.error(err));
 });
+
+let inactivityTime = 10 * 60 * 1000; // 10 minutes
+let timeout;
+
+function resetTimer() {
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    fetch("{{ url_for('main.logout') }}")
+      .then(() => window.location.href = "{{ url_for('main.login') }}");
+  }, inactivityTime);
+}
+
+document.addEventListener("mousemove", resetTimer);
+document.addEventListener("keydown", resetTimer);
+document.addEventListener("click", resetTimer);
+
+resetTimer();
