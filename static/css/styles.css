@@ -111,6 +111,34 @@ label {
   font-weight: bold;
 }
 
+.feature-card {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon i {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon i {
+  transform: scale(1.1);
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 15px auto;
+}
+
 .team-card {
   border: none;
   transition: transform 0.3s ease;
@@ -122,4 +150,56 @@ label {
 
 footer {
   background: var(--secondary-color);
+}
+
+/* Press Section Styling */
+.press-logo {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  max-width: 150px;
+  margin: 0 auto;
+}
+
+.press-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.press-logo img {
+  max-height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Story Section Styling */
+.timeline-list {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.timeline-list li {
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.timeline-list li::before {
+  content: "▹";
+  position: absolute;
+  left: -1.5rem;
+  color: var(--primary-color);
+}
+
+.story-visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.img-caption {
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0.8;
 }

@@ -2,7 +2,7 @@
 {% block title %}About Us - EASY PARK{% endblock %}
 {% block content %}
 <main class="flex-grow-1 bg-white">
-  <section class="hero-section">
+  <section class="hero-section mt-5">
     <div class="hero-content">
       <h1 class="display-4 fw-bold fs-1">About Us</h1>
       <p class="lead fs-3 mt-3">Innovating the Parking Experience</p>
@@ -10,12 +10,40 @@
   </section>
 
   <!-- Our Story & Mission -->
-  <section class="container py-5">
-    <div class="row mb-4">
-      <div class="col text-center">
-        <h2 class="section-title">Our Story</h2>
-        <p class="text-muted">Founded with a passion to simplify urban parking, EASY PARK is revolutionizing the way you
-          book a parking spot. We combine innovative technology with a commitment to customer convenience.</p>
+  <section class="container py-4">
+    <div class="row align-items-center mb-4">
+      <!-- Text Column -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h2 class="section-title text-start mb-4 text-center">Our Story</h2>
+        <div class="text-muted">
+          <p class="lead">Founded in 2020 with a passion to simplify urban parking, EASY PARK emerged from personal
+            frustration with traditional parking systems.</p>
+
+          <p>Our journey began in Nairobi's bustling CBD, where our founders experienced firsthand the challenges of
+            finding reliable parking. What started as a university project has now transformed into Kenya's leading
+            parking solution platform.</p>
+
+          <div class="mt-4">
+            <h5 class="fw-bold">Key Milestones</h5>
+            <ul class="timeline-list">
+              <li>2020: Launched MVP with 5 parking lots</li>
+              <li>2021: Reached 10,000 active users</li>
+              <li>2022: Expanded to 3 major cities</li>
+              <li>2023: Won National Innovation Award</li>
+            </ul>
+          </div>
+
+          <a href="/about" class="btn btn-outline-warning mt-3">Read Full Story</a>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="col-md-6">
+        <div class="story-visual">
+          <img src="{{ url_for('static', filename='img/story.svg') }}"
+            alt="EASY PARK's journey from concept to leading parking platform" class="img-fluid rounded-3">
+          <div class="img-caption text-muted mt-2"></div>
+        </div>
       </div>
     </div>
     <div class="row align-items-center">
@@ -34,6 +62,123 @@
     </div>
   </section>
 
+  <!-- Why Choose Us Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col">
+          <h2 class="section-title">Why Choose EASY PARK</h2>
+          <p class="text-muted">Discover what makes us different</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <!-- Feature 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card p-4 h-100 shadow-sm border-0">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-clock-history fs-1 text-warning"></i>
+            </div>
+            <h3 class="h5 fw-bold">Instant Booking</h3>
+            <p class="text-muted">Reserve your spot in seconds with our intuitive platform. Real-time availability
+              updates ensure you get the space you need.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card p-4 h-100 shadow-sm border-0">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-shield-check fs-1 text-warning"></i>
+            </div>
+            <h3 class="h5 fw-bold">Secure & Reliable</h3>
+            <p class="text-muted">Bank-grade security protects your transactions. 24/7 monitoring ensures parking lot
+              safety.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card p-4 h-100 shadow-sm border-0">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-currency-dollar fs-1 text-warning"></i>
+            </div>
+            <h3 class="h5 fw-bold">Best Prices</h3>
+            <p class="text-muted">Guaranteed competitive pricing with price match promise. No hidden fees or surprises.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card p-4 h-100 shadow-sm border-0">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-headset fs-1 text-warning"></i>
+            </div>
+            <h3 class="h5 fw-bold">24/7 Support</h3>
+            <p class="text-muted">Dedicated customer service team available round-the-clock via chat, phone, or email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row text-center mb-4">
+        <div class="col">
+          <h2 class="section-title">As Seen On</h2>
+          <p class="text-muted">Trusted by leading organizations and media outlets</p>
+        </div>
+      </div>
+
+      <!-- Logo Wall -->
+      <div class="row g-4 align-items-center justify-content-center">
+        <!-- Press Logo 1 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="press-logo">
+            <img src="{{ url_for('static', filename='img/press/techcrunch.png') }}" alt="TechCrunch" class="img-fluid">
+          </div>
+        </div>
+
+        <!-- Press Logo 2 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="press-logo">
+            <img src="{{ url_for('static', filename='img/press/forbes.png') }}" alt="Forbes" class="img-fluid">
+          </div>
+        </div>
+
+        <!-- Press Logo 3 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="press-logo">
+            <img src="{{ url_for('static', filename='img/press/bloomberg.png') }}" alt="Bloomberg" class="img-fluid">
+          </div>
+        </div>
+
+        <!-- Press Logo 4 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="press-logo">
+            <img src="{{ url_for('static', filename='img/press/wired.png') }}" alt="Wired" class="img-fluid">
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="press-logo">
+            <img src="{{ url_for('static', filename='img/press/google.png')}}" alt="Google" class="img-fluid">
+          </div>
+        </div>
+
+        <!-- Press Logo 6 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="press-logo">
+            <img src="{{ url_for('static', filename='img/press/cnn.png') }}" alt="CNN" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Team Section -->
   <section class="bg-light py-5">
     <div class="container">
@@ -47,7 +192,7 @@
         <!-- Team Member 1 -->
         <div class="col-md-4 mb-4 h-50">
           <div class="card team-card shadow">
-            <img src="{{url_for('static', filename='img/team1.jpg')}}" class="card-img-top" alt="Team Member 1">
+            <img src="{{url_for('static', filename='img/team/team1.jpg')}}" class="card-img-top" alt="Team Member 1">
             <div class="card-body">
               <h5 class="card-title">John Kibe</h5>
               <p class="card-text text-muted">CEO & Founder</p>
@@ -57,7 +202,7 @@
         <!-- Team Member 2 -->
         <div class="col-md-4 mb-4">
           <div class="card team-card shadow">
-            <img src="{{url_for('static', filename='img/team2.jpg')}}" class="card-img-top" alt="Team Member 2">
+            <img src="{{url_for('static', filename='img/team/team2.jpg')}}" class="card-img-top" alt="Team Member 2">
             <div class="card-body">
               <h5 class="card-title">Jane Smith</h5>
               <p class="card-text text-muted">CTO</p>
@@ -67,7 +212,7 @@
         <!-- Team Member 3 -->
         <div class="col-md-4 mb-4">
           <div class="card team-card shadow">
-            <img src="{{url_for('static', filename='img/team3.jpg')}}" class="card-img-top" alt="Team Member 3">
+            <img src="{{url_for('static', filename='img/team/team3.jpg')}}" class="card-img-top" alt="Team Member 3">
             <div class="card-body">
               <h5 class="card-title fw-3">Emily Johnson</h5>
               <p class="card-text text-secondary">Marketing Lead</p>

@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style>
     .section-title {
       font-size: 2.5rem;
@@ -26,7 +27,7 @@
 <body>
   {% block header %}
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
         <a class="navbar-brand fw-bold text-white" href="{{ url_for('main.home') }}">
           EASY <span class="text-warning">PARK</span>
@@ -59,7 +60,7 @@
 
   {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
-  <div class="container position-fixed top-0 start-50 translate-middle-x mt-3 z-3 w-50">
+  <div class="container position-fixed top-0 start-50 translate-middle-x mt-5 z-3 w-50">
     {% for category, message in messages %}
     <div class="alert alert-{{ category }} alert-dismissible fade show text-center" role="alert">
       {{ message }}
@@ -71,11 +72,84 @@
   {% endwith %}
   {% block content %}{% endblock %}
   {% block footer %}
-  <footer class="py-4 bg-dark text-light">
-    <div class="container text-center">
-      <p>&copy; 2025 EASY PARK. All Rights Reserved.</p>
+  <footer class="text-light pt-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Contact Info -->
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-4">Contact Us</h5>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="fas fa-map-marker-alt me-2"></i>
+              123 Parking Lane, Nairobi, Kenya
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-phone me-2"></i>
+              <a href="tel:+254712345678" class="text-light">+254 712 345 678</a>
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-envelope me-2"></i>
+              <a href="mailto:info@easypark.co.ke" class="text-light">info@easypark.co.ke</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-2 mb-4">
+          <h5 class="text-uppercase mb-4">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="{{url_for('main.home')}}" class="text-light">Home</a></li>
+            <li class="mb-2"><a href="{{url_for('main.about')}}" class="text-light">About Us</a></li>
+            <li class="mb-2"><a href="{{url_for('main.plans')}}" class="text-light">Plans</a></li>
+            <li class="mb-2"><a href="#" class="text-light">Testimonials</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-uppercase mb-4">Follow Us</h5>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-light fs-5" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="text-light fs-5" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-light fs-5" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-light fs-5" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-uppercase mb-4">Newsletter</h5>
+          <form>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter email">
+              <button class="btn btn-warning" type="submit" aria-label="Submit">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-top pt-4 mt-4 text-center">
+        <p class="mb-0">
+          &copy; 2025 EASY PARK. All Rights Reserved<br>
+          <small class="text-muted">Nairobi, Kenya</small>
+        </p>
+      </div>
     </div>
   </footer>
+
+  <!-- Add this in your head section -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   {% endblock %}
 
   <script src="{{url_for('static', filename='js/script.js')}}"></script>
