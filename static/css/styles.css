@@ -205,3 +205,201 @@ footer {
   text-align: center;
   opacity: 0.8;
 }
+
+.team-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  max-height: 500px;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-image {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.team-card:hover img {
+  transform: scale(1.05);
+}
+
+.social-links {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  transition: bottom 0.3s;
+}
+
+.team-card:hover .social-links {
+  bottom: 20px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.card-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.member-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.member-role {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.member-bio {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.pricing-card {
+  border-radius: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+}
+
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 8px 0;
+  background: var(--primary-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  text-align: center;
+  right: -25px;
+  top: 30px;
+  transform: rotate(45deg);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(90deg, var(--primary-color), #2c3e50);
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.hover-shadow-lg:hover {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+.comparison-table {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+.plan-header {
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.highlight-col {
+  background: rgba(245, 205, 5, 0.1) !important;
+  position: relative;
+}
+
+.highlight-col::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary-color);
+  right: -1px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+
+.plan-header .badge {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  color: #000;
+}
+
+.price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.price span {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.fa-car,
+.fa-shield-alt,
+.fa-clock,
+.fa-headset,
+.fa-star {
+  color: var(--primary-color);
+}

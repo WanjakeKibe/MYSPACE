@@ -2,114 +2,204 @@
 
 {% block title %}Choose Your Plan{% endblock %}
 
-{% block extra_head %}
-<style>
-  body {
-    background: linear-gradient(135deg, #f8f9fa 30%, #e9ecef 100%);
-  }
-
-  .card {
-    border-radius: 10px;
-  }
-</style>
-{% endblock %}
-
 {% block content %}
 <main class="container py-5 mt-4">
   <h2 class="text-center mb-4">Choose Your Plan</h2>
-
-  <!-- Pricing Cards -->
-  <div class="row justify-content-center">
-    <div class="col-md-4">
-      <div class="card text-left shadow-sm mb-4 border-0">
-        <div class="card-body">
-          <h5 class="card-title text-center">Basic</h5>
-          <h3 class="card-price text-center fw-bold display-6 mb-2">$10/month</h3>
-          <ul class="list-unstyled">
-            <li>✔ 1 Parking Slot</li>
-            <li>✔ Basic Security</li>
-            <li>✔ Standard Support</li>
+  <div class="row justify-content-center g-4">
+    <div class="col-lg-4 col-md-6">
+      <div class="card pricing-card shadow-lg hover-shadow-lg border-0 transition-all">
+        <div class="card-header bg-warning text-white text-center py-4">
+          <h3 class="mb-0">Starter</h3>
+          <div class="price-display mt-3">
+            <span class="h2 fw-bold">$10</span>
+            <span class="text-light">/month</span>
+          </div>
+          <small class="d-block mt-2">Perfect for occasional parkers</small>
+        </div>
+        <div class="card-body p-4">
+          <ul class="list-unstyled mb-4">
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-check-circle text-success me-2"></i>
+              1 guaranteed parking slot
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-shield-alt text-primary me-2"></i>
+              Basic security monitoring
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-clock text-info me-2"></i>
+              48-hour reservation window
+            </li>
           </ul>
-          <a href="#" class="btn btn-warning fw-bold w-100">Select Plan</a>
+          <a href="#" class="btn btn-outline-warning w-100 py-2 fw-bold">
+            Get Started
+          </a>
         </div>
       </div>
     </div>
-
-    <div class="col-md-4">
-      <div class="card text-left shadow-sm mb-4 border-0">
-        <div class="card-body">
-          <h5 class="card-title text-center">Premium</h5>
-          <h3 class="card-price text-center fw-bold display-6 mb-2">$25/month</h3>
-          <ul class="list-unstyled">
-            <li>✔ 3 Parking Slots</li>
-            <li>✔ Advanced Security</li>
-            <li>✔ Priority Support</li>
+    <div class="col-lg-4 col-md-6">
+      <div class="card pricing-card shadow-lg border-0 border-2 hover-shadow-lg transition-all">
+        <div class="ribbon ribbon-top-right"><span>Most Popular</span></div>
+        <div class="card-header bg-gradient-primary text-white text-center py-4">
+          <h3 class="mb-0">Premium</h3>
+          <div class="price-display mt-3">
+            <span class="h1 fw-bold">$25</span>
+            <span class="text-light">/month</span>
+          </div>
+          <small class="d-block mt-2">Best value for regular users</small>
+        </div>
+        <div class="card-body p-4">
+          <ul class="list-unstyled mb-4">
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-check-circle text-success me-2"></i>
+              3 priority parking slots
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-shield-alt text-primary me-2"></i>
+              Advanced security + insurance
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-bolt text-warning me-2"></i>
+              Instant reservation confirmations
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-star text-info me-2"></i>
+              VIP customer support
+            </li>
           </ul>
-          <a href="#" class="btn btn-warning fw-bold w-100">Select Plan</a>
+          <a href="#" class="btn btn-warning w-100 py-2 fw-bold">
+            Choose Premium
+          </a>
         </div>
       </div>
     </div>
-
-    <div class="col-md-4">
-      <div class="card text-left shadow-sm mb-4 border-0">
-        <div class="card-body">
-          <h5 class="card-title text-center">VIP</h5>
-          <h3 class="card-price text-center fw-bold display-6 mb-2">$50/month</h3>
-          <ul class="list-unstyled">
-            <li>✔ Unlimited Parking</li>
-            <li>✔ 24/7 Security</li>
-            <li>✔ Dedicated Support</li>
+    <div class="col-lg-4 col-md-6">
+      <div class="card pricing-card shadow-lg hover-shadow-lg border-0 transition-all">
+        <div class="card-header bg-dark text-white text-center py-4">
+          <h3 class="mb-0">Enterprise</h3>
+          <div class="price-display mt-3">
+            <span class="h2 fw-bold">$50</span>
+            <span class="text-light">/month</span>
+          </div>
+          <small class="d-block mt-2">For heavy users & businesses</small>
+        </div>
+        <div class="card-body p-4">
+          <ul class="list-unstyled mb-4">
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-check-circle text-success me-2"></i>
+              Unlimited parking access
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-shield-alt text-primary me-2"></i>
+              24/7 dedicated security
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-concierge-bell text-danger me-2"></i>
+              Personal parking concierge
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fas fa-calendar-star text-info me-2"></i>
+              Monthly reserved spots
+            </li>
           </ul>
-          <a href="#" class="btn btn-warning fw-bold w-100">Select Plan</a>
+          <a href="#" class="btn btn-outline-dark w-100 py-2 fw-bold">
+            Contact Sales
+          </a>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Comparison Table -->
-  <div class="table-responsive mt-5">
-    <table class="table table-bordered text-center">
-      <thead>
-        <tr>
-          <th>Features</th>
-          <th>Basic</th>
-          <th>Premium</th>
-          <th>VIP</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Number of Slots</td>
-          <td>1</td>
-          <td>3</td>
-          <td>Unlimited</td>
-        </tr>
-        <tr>
-          <td>24/7 Access</td>
-          <td>❌</td>
-          <td>❌</td>
-          <td>✅</td>
-        </tr>
-        <tr>
-          <td>Security Level</td>
-          <td>Basic Security</td>
-          <td>Advanced Security</td>
-          <td>24/7 Security</td>
-        </tr>
-        <tr>
-          <td>Customer Support</td>
-          <td>Standard Support</td>
-          <td>Priority Support</td>
-          <td>Dedicated Support</td>
-        </tr>
-        <tr>
-          <td>VIP Lounge</td>
-          <td>❌</td>
-          <td>❌</td>
-          <td>✅</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="comparison-table mt-5">
+    <div class="table-responsive">
+      <table class="table table-borderless">
+        <thead class="bg-primary text-white">
+          <tr>
+            <th class="text-start ps-4 align-middle">Key Features</th>
+            <th class="text-center">
+              <div class="plan-header py-3">
+                <h5>Basic</h5>
+                <div class="price">$10<span>/mo</span></div>
+              </div>
+            </th>
+            <th class="text-center highlight-col">
+              <div class="plan-header py-2 position-relative">
+                <span class="badge">Most Popular</span>
+                <h5>Premium</h5>
+                <div class="price">$25<span>/mo</span></div>
+              </div>
+            </th>
+            <th class="text-center">
+              <div class="plan-header py-3">
+                <h5>VIP</h5>
+                <div class="price">$50<span>/mo</span></div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-start ps-4">
+              <i class="fas fa-car me-2"></i>Parking Slots
+            </td>
+            <td>1</td>
+            <td class="highlight-col">3</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td class="text-start ps-4">
+              <i class="fas fa-shield-alt me-2"></i>Security
+            </td>
+            <td>
+              <span class="badge bg-light text-dark">Basic</span>
+            </td>
+            <td class="highlight-col">
+              <span class="badge bg-warning">Advanced</span>
+            </td>
+            <td>
+              <span class="badge bg-success">24/7</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-start ps-4">
+              <i class="fas fa-clock me-2"></i>Access Hours
+            </td>
+            <td>Daytime</td>
+            <td class="highlight-col">18/7</td>
+            <td>24/7</td>
+          </tr>
+          <tr>
+            <td class="text-start ps-4">
+              <i class="fas fa-headset me-2"></i>Support
+            </td>
+            <td>Email</td>
+            <td class="highlight-col">Priority</td>
+            <td>Dedicated</td>
+          </tr>
+          <tr>
+            <td class="text-start ps-4">
+              <i class="fas fa-star me-2"></i>VIP Lounge
+            </td>
+            <td><i class="fas fa-times text-danger"></i></td>
+            <td class="highlight-col"><i class="fas fa-times text-danger"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>
+              <button class="btn btn-outline-primary w-100">Choose Basic</button>
+            </td>
+            <td class="highlight-col">
+              <button class="btn btn-primary w-100">Choose Premium</button>
+            </td>
+            <td>
+              <button class="btn btn-outline-primary w-100">Choose VIP</button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
   </div>
 </main>
 {% endblock %}

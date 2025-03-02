@@ -8,11 +8,8 @@
       <p class="lead fs-3 mt-3">Innovating the Parking Experience</p>
     </div>
   </section>
-
-  <!-- Our Story & Mission -->
   <section class="container py-4">
     <div class="row align-items-center mb-4">
-      <!-- Text Column -->
       <div class="col-md-6 mb-4 mb-md-0">
         <h2 class="section-title text-start mb-4 text-center">Our Story</h2>
         <div class="text-muted">
@@ -36,8 +33,6 @@
           <a href="/about" class="btn btn-outline-warning mt-3">Read Full Story</a>
         </div>
       </div>
-
-      <!-- Image Column -->
       <div class="col-md-6">
         <div class="story-visual">
           <img src="{{ url_for('static', filename='img/story.svg') }}"
@@ -48,7 +43,7 @@
     </div>
     <div class="row align-items-center">
       <div class="col-md-6">
-        <img src="../static/img/about.png" alt="Our Office" class="img-fluid rounded">
+        <img src="{{ url_for('static', filename='img/about.png') }}" alt="Our Office" class="img-fluid rounded">
       </div>
       <div class="col-md-6">
         <h3 class="fw-bold">Our Mission</h3>
@@ -61,8 +56,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Why Choose Us Section -->
   <section class="py-5">
     <div class="container">
       <div class="row text-center mb-5">
@@ -72,7 +65,6 @@
         </div>
       </div>
       <div class="row g-4">
-        <!-- Feature 1 -->
         <div class="col-md-6 col-lg-3">
           <div class="feature-card p-4 h-100 shadow-sm border-0">
             <div class="feature-icon mb-3">
@@ -83,8 +75,6 @@
               updates ensure you get the space you need.</p>
           </div>
         </div>
-
-        <!-- Feature 2 -->
         <div class="col-md-6 col-lg-3">
           <div class="feature-card p-4 h-100 shadow-sm border-0">
             <div class="feature-icon mb-3">
@@ -95,8 +85,6 @@
               safety.</p>
           </div>
         </div>
-
-        <!-- Feature 3 -->
         <div class="col-md-6 col-lg-3">
           <div class="feature-card p-4 h-100 shadow-sm border-0">
             <div class="feature-icon mb-3">
@@ -107,8 +95,6 @@
             </p>
           </div>
         </div>
-
-        <!-- Feature 4 -->
         <div class="col-md-6 col-lg-3">
           <div class="feature-card p-4 h-100 shadow-sm border-0">
             <div class="feature-icon mb-3">
@@ -122,8 +108,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Press Section -->
   <section class="py-5 bg-light">
     <div class="container">
       <div class="row text-center mb-4">
@@ -132,31 +116,22 @@
           <p class="text-muted">Trusted by leading organizations and media outlets</p>
         </div>
       </div>
-
-      <!-- Logo Wall -->
       <div class="row g-4 align-items-center justify-content-center">
-        <!-- Press Logo 1 -->
         <div class="col-6 col-md-3 col-lg-2">
           <div class="press-logo">
             <img src="{{ url_for('static', filename='img/press/techcrunch.png') }}" alt="TechCrunch" class="img-fluid">
           </div>
         </div>
-
-        <!-- Press Logo 2 -->
         <div class="col-6 col-md-3 col-lg-2">
           <div class="press-logo">
             <img src="{{ url_for('static', filename='img/press/forbes.png') }}" alt="Forbes" class="img-fluid">
           </div>
         </div>
-
-        <!-- Press Logo 3 -->
         <div class="col-6 col-md-3 col-lg-2">
           <div class="press-logo">
             <img src="{{ url_for('static', filename='img/press/bloomberg.png') }}" alt="Bloomberg" class="img-fluid">
           </div>
         </div>
-
-        <!-- Press Logo 4 -->
         <div class="col-6 col-md-3 col-lg-2">
           <div class="press-logo">
             <img src="{{ url_for('static', filename='img/press/wired.png') }}" alt="Wired" class="img-fluid">
@@ -168,8 +143,6 @@
             <img src="{{ url_for('static', filename='img/press/google.png')}}" alt="Google" class="img-fluid">
           </div>
         </div>
-
-        <!-- Press Logo 6 -->
         <div class="col-6 col-md-3 col-lg-2">
           <div class="press-logo">
             <img src="{{ url_for('static', filename='img/press/cnn.png') }}" alt="CNN" class="img-fluid">
@@ -178,44 +151,75 @@
       </div>
     </div>
   </section>
-
-  <!-- Team Section -->
-  <section class="bg-light py-5">
+  <section class="team-section py-5 bg-light">
     <div class="container">
-      <div class="row text-center mb-4">
-        <div class="col">
-          <h2 class="section-title">Meet the Team</h2>
-          <p class="text-muted">The creative minds behind EASY PARK</p>
+      <div class="row mb-5">
+        <div class="col text-center">
+          <h2 class="display-5 fw-bold mb-3 section-title">Meet Our Innovators</h2>
+          <p class="section-subtitle">The Visionaries Driving Parking Revolution</p>
         </div>
       </div>
-      <div class="row">
-        <!-- Team Member 1 -->
-        <div class="col-md-4 mb-4 h-50">
-          <div class="card team-card shadow">
-            <img src="{{url_for('static', filename='img/team/team1.jpg')}}" class="card-img-top" alt="Team Member 1">
-            <div class="card-body">
-              <h5 class="card-title">John Kibe</h5>
-              <p class="card-text text-muted">CEO & Founder</p>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4 col-md-6">
+          <div class="team-card">
+            <div class="card-image">
+              <img src="{{url_for('static', filename='img/team/team1.jpg')}}" alt="John Kibe - CEO & Founder"
+                class="img-fluid h-100">
+              <div class="social-links">
+                <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Mail" class="social-icon"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="member-name">John Kibe</h3>
+              <p class="member-role">CEO & Founder</p>
+              <div class="member-bio">
+                <p>Visionary leader who transformed Nairobi's parking crisis into a pan-African mobility solution
+                  serving 500,000+ drivers monthly.</p>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Team Member 2 -->
-        <div class="col-md-4 mb-4">
-          <div class="card team-card shadow">
-            <img src="{{url_for('static', filename='img/team/team2.jpg')}}" class="card-img-top" alt="Team Member 2">
-            <div class="card-body">
-              <h5 class="card-title">Jane Smith</h5>
-              <p class="card-text text-muted">CTO</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="team-card">
+            <div class="card-image">
+              <img src="{{url_for('static', filename='img/team/team2.jpg')}}" alt="Jane Smith - CTO"
+                class="img-fluid h-100">
+              <div class="social-links">
+                <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Mail" class="social-icon"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="member-name">Jane Smith</h3>
+              <p class="member-role">CTO</p>
+              <div class="member-bio">
+                <p>Tech visionary with 8+ years architecting scalable parking platforms. Led development of our
+                  AI-powered availability prediction system, reducing user search time by 65%.</p>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Team Member 3 -->
-        <div class="col-md-4 mb-4">
-          <div class="card team-card shadow">
-            <img src="{{url_for('static', filename='img/team/team3.jpg')}}" class="card-img-top" alt="Team Member 3">
-            <div class="card-body">
-              <h5 class="card-title fw-3">Emily Johnson</h5>
-              <p class="card-text text-secondary">Marketing Lead</p>
+        <div class="col-lg-4 col-md-6">
+          <div class="team-card">
+            <div class="card-image">
+              <img src="{{url_for('static', filename='img/team/team3.jpg')}}" alt="Emily Johnson - Marketing Lead"
+                class="img-fluid">
+              <div class="social-links">
+                <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="member-name">Emily Johnson</h3>
+              <p class="member-role">Marketing Lead</p>
+              <div class="member-bio">
+                <p>Growth strategist driving 300% user acquisition since 2021. Pioneered our viral "Park Smart" campaign
+                  integrating behavioral psychology with urban mobility trends.</p>
+              </div>
             </div>
           </div>
         </div>
