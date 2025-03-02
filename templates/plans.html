@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Choose Your Plan{% endblock %}
+
+{% block extra_head %}
+<style>
+  body {
+    background: linear-gradient(135deg, #f8f9fa 30%, #e9ecef 100%);
+  }
+
+  .card {
+    border-radius: 10px;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="container py-5 mt-4">
+  <h2 class="text-center mb-4">Choose Your Plan</h2>
+
+  <!-- Pricing Cards -->
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card text-left shadow-sm mb-4 border-0">
+        <div class="card-body">
+          <h5 class="card-title text-center">Basic</h5>
+          <h3 class="card-price text-center fw-bold display-6 mb-2">$10/month</h3>
+          <ul class="list-unstyled">
+            <li>✔ 1 Parking Slot</li>
+            <li>✔ Basic Security</li>
+            <li>✔ Standard Support</li>
+          </ul>
+          <a href="#" class="btn btn-warning fw-bold w-100">Select Plan</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-left shadow-sm mb-4 border-0">
+        <div class="card-body">
+          <h5 class="card-title text-center">Premium</h5>
+          <h3 class="card-price text-center fw-bold display-6 mb-2">$25/month</h3>
+          <ul class="list-unstyled">
+            <li>✔ 3 Parking Slots</li>
+            <li>✔ Advanced Security</li>
+            <li>✔ Priority Support</li>
+          </ul>
+          <a href="#" class="btn btn-warning fw-bold w-100">Select Plan</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-left shadow-sm mb-4 border-0">
+        <div class="card-body">
+          <h5 class="card-title text-center">VIP</h5>
+          <h3 class="card-price text-center fw-bold display-6 mb-2">$50/month</h3>
+          <ul class="list-unstyled">
+            <li>✔ Unlimited Parking</li>
+            <li>✔ 24/7 Security</li>
+            <li>✔ Dedicated Support</li>
+          </ul>
+          <a href="#" class="btn btn-warning fw-bold w-100">Select Plan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="table-responsive mt-5">
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr>
+          <th>Features</th>
+          <th>Basic</th>
+          <th>Premium</th>
+          <th>VIP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Number of Slots</td>
+          <td>1</td>
+          <td>3</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td>24/7 Access</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Security Level</td>
+          <td>Basic Security</td>
+          <td>Advanced Security</td>
+          <td>24/7 Security</td>
+        </tr>
+        <tr>
+          <td>Customer Support</td>
+          <td>Standard Support</td>
+          <td>Priority Support</td>
+          <td>Dedicated Support</td>
+        </tr>
+        <tr>
+          <td>VIP Lounge</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+{% endblock %}

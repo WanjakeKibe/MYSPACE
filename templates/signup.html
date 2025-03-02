@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Sign Up - EASY PARK{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+<main class="container-fluid bg-white p-3 min-vh-100">
+  <div class="row p-0 align-items-center justify-content-center flex-wrap d-flex">
+    <!-- Image Section -->
+    <div class="col-md-6 col-12">
+      <img src="{{ url_for('static', filename='img/signup-concept.jpg') }}" alt="Illustration" class="img-fluid w-100">
+    </div>
+
+    <!-- Signup Form Section -->
+    <div class="col-md-6 col-12">
+      <h2 class="text-uppercase fw-bold">Join <span class="text-black">EASY <span class="text-warning">PARK</span></span></h2>
+      <p class="lead">Create an account and start booking your parking spaces today!</p>
+      <form method="POST" action="{{ url_for('main.signup') }}">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+          {{ form.fullname.label(class="form-label") }}
+          {{ form.fullname(class="form-control", placeholder="Enter your full name") }}
+        </div>
+
+        <div class="mb-3">
+          {{ form.email.label(class="form-label") }}
+          {{ form.email(class="form-control", placeholder="Enter your email") }}
+        </div>
+
+        <div class="mb-3">
+          {{ form.username.label(class="form-label") }}
+          {{ form.username(class="form-control", placeholder="Choose a username") }}
+        </div>
+
+        <div class="mb-3">
+          {{ form.password.label(class="form-label") }}
+          {{ form.password(class="form-control", placeholder="Enter your password") }}
+        </div>
+
+        <div class="mb-3">
+          {{ form.confirm_password.label(class="form-label") }}
+          {{ form.confirm_password(class="form-control", placeholder="Confirm your password") }}
+        </div>
+
+        <div class="mb-3 form-check">
+          {{ form.terms(class="form-check-input") }}
+          <label for="terms" class="form-check-label">I agree to the <a href="#"
+              class="text-warning text-decoration-none" target="_blank">Terms & Conditions</a></label>
+        </div>
+
+
+        <div class="d-grid mb-3">
+          {{ form.submit(class="btn btn-warning fw-bold text-uppercase") }}
+        </div>
+
+        <div class="text-left">
+          <p>Already have an account? <a href="{{ url_for('main.login') }}"
+              class="text-decoration-none text-warning">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block footer %}{% endblock %}
