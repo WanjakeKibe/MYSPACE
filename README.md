@@ -27,7 +27,7 @@ Ensure you have the following installed:
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/WanjakeKibe/MYSPACE/tree/other-branch
+   git clone https://github.com/WanjakeKibe/MYSPACE
    cd MYSPACE
    ```
 
