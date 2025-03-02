@@ -20,7 +20,7 @@ def is_session_active():
             flash("You have been logged out due to inactivity.", "info")
             return False
     session['last_activity'] = datetime.utcnow(
-    ).timestamp()  # Update session time
+    ).timestamp()
     return True
 
 
@@ -33,7 +33,7 @@ def check_session():
 
 @main.route('/')
 def home():
-    print("Session Data:", session)  # Debugging step
+    print("Session Data:", session)
     user = None
     user_id = session.get("user_id")
 
@@ -60,16 +60,12 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
 
-        if not user:
-            flash('Username not found. Please sign up first.', 'danger')
-            return redirect(url_for('main.login'))
-
-        if not check_password_hash(user.password, form.password.data):
-            flash('Incorrect password. Please try again.', 'danger')
+        if not user or not check_password_hash(user.password, form.password.data):
+            flash('Invalid credentials. Please try again.', 'danger')
             return redirect(url_for('main.login'))
 
         session['user_id'] = user.id
-        session.permanent = True  # Enable session expiration
+        session.permanent = True
         session.modified = True
         session['last_activity'] = datetime.utcnow().timestamp()
         flash('Login successful! Welcome back.', 'success')
@@ -126,12 +122,12 @@ def signup():
     return render_template('signup.html', form=form)
 
 
-# @main.route('/api/parking-spots', methods=['GET'])
-# def get_parking_spots():
-#     spots = ParkingSpot.query.all()
-#     spots_list = [{'id': spot.id, 'name': spot.name,
-#                    'location': spot.location} for spot in spots]
-#     return jsonify(spots_list)
+@main.route('/api/parking-spots', methods=['GET'])
+def get_parking_spots():
+    spots = ParkingSpot.query.all()
+    spots_list = [{'id': spot.id, 'name': spot.name,
+                   'location': spot.location} for spot in spots]
+    return jsonify(spots_list)
 
 
 @main.route('/api/book', methods=['POST'])
@@ -150,12 +146,14 @@ def book():
 
     # Create and save a new booking
     new_booking = Booking(
+        user_id=session['user_id'],
         location_id=data['location_id'],
         check_in_date=data['check_in_date'],
         check_in_time=data['check_in_time'],
         check_out_date=data['check_out_date'],
         check_out_time=data['check_out_time'],
-        promo_code=data.get('promo_code')
+        promo_code=data.get('promo_code'),
+        status="pending"
     )
     db.session.add(new_booking)
     db.session.commit()
@@ -176,3 +174,40 @@ def user_info():
         return jsonify({"error": "User not found"}), 404
 
     return jsonify({"name": user.name})
+
+
+@main.route('/dashboard')
+def dashboard():
+    if 'user_id' not in session:
+        return redirect(url_for('main.login'))
+
+    user_id = session['user_id']
+    user = User.query.get(user_id)
+    bookings = Booking.query.filter_by(user_id=user_id).all()
+
+    return render_template('dashboard.html', user=user, bookings=bookings)
+
+
+@main.route('/api/bookings/<int:booking_id>/status', methods=['PUT'])
+def update_booking_status(booking_id):
+    if 'user_id' not in session:
+        return jsonify({"error": "Unauthorized"}), 401
+
+    data = request.get_json()
+    new_status = data.get("status")
+
+    if new_status not in ["pending", "confirmed", "canceled"]:
+        return jsonify({"error": "Invalid status"}), 400
+
+    booking = Booking.query.get(booking_id)
+    if not booking:
+        return jsonify({"error": "Booking not found"}), 404
+
+    booking.status = new_status
+    db.session.commit()
+
+    return jsonify({
+        "message": f"Booking status updated to {new_status}",
+        "booking_id": booking.id,
+        "status": booking.status
+    }), 200

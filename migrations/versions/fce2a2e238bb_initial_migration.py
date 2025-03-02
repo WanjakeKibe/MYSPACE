@@ -1,8 +1,8 @@
 """Initial migration
 
-Revision ID: cbee3047b6d0
+Revision ID: fce2a2e238bb
 Revises: 
-Create Date: 2025-03-01 10:01:42.015355
+Create Date: 2025-03-02 09:05:51.640000
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'cbee3047b6d0'
+revision = 'fce2a2e238bb'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -36,13 +36,16 @@ def upgrade():
     )
     op.create_table('booking',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('location_id', sa.Integer(), nullable=False),
     sa.Column('check_in_date', sa.String(length=10), nullable=False),
     sa.Column('check_in_time', sa.String(length=5), nullable=False),
     sa.Column('check_out_date', sa.String(length=10), nullable=False),
     sa.Column('check_out_time', sa.String(length=5), nullable=False),
     sa.Column('promo_code', sa.String(length=20), nullable=True),
+    sa.Column('status', sa.String(length=10), nullable=False),
     sa.ForeignKeyConstraint(['location_id'], ['parking_spot.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
