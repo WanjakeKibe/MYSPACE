@@ -16,33 +16,33 @@
 
   .hero {
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 0;
     transform: translate(0, -30%);
     max-width: 600px;
     width: 100%;
     padding-left: 3rem;
+    z-index: 1;
   }
 
   @media screen and (max-width: 768px) {
     .hero {
       left: 0;
-      top: 10%;
-      transform: translate(0, -10%);
+      top: 15%;
+      transform: translate(0, -15%);
     }
-
   }
 </style>
 {% endblock %}
 {% block content %}
 <main class="main-bg">
   <section class="hero flex-grow-1 text-light container d-flex flex-column justify-content-start align-items-left">
-    <h1 class="text-start display-3">Welcome to <span class="text-warning d-block my-3 display-1 fw-bold">EASY
-        PARK</span></h1>
+    <h1 class="text-start display-3">Welcome to <span class="d-block my-3 display-1 fw-bold">EASY
+        <span class="text-warning">PARK</span></span></h1>
     <p class="text-start lead">Find and book a parking spot easily.</p>
   </section>
 
-  <section class="booking-form text-light py-4 glossy-bg p-4 rounded shadow-lg" aria-labelledby="booking-title">
+  <section class="booking-form text-light py-3 glossy-bg p-4 rounded shadow-lg" aria-labelledby="booking-title">
     <div class="container-fluid">
       <h2 id="booking-title" class="text-center mb-5 fw-bold text-warning">Book Your Parking Spot</h2>
       <form class="text-align-start needs-validation" novalidate>
