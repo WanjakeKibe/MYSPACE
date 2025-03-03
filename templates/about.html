@@ -36,14 +36,16 @@
       <div class="col-md-6">
         <div class="story-visual">
           <img src="{{ url_for('static', filename='img/story.svg') }}"
-            alt="EASY PARK's journey from concept to leading parking platform" class="img-fluid rounded-3">
+            alt="EASY PARK's journey from concept to leading parking platform" class="img-fluid rounded-3"
+            loading="lazy">
           <div class="img-caption text-muted mt-2"></div>
         </div>
       </div>
     </div>
     <div class="row align-items-center">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/about.png') }}" alt="Our Office" class="img-fluid rounded">
+        <img src="{{ url_for('static', filename='img/about.png') }}" alt="Our Office" class="img-fluid rounded"
+          loading="lazy">
       </div>
       <div class="col-md-6">
         <h3 class="fw-bold">Our Mission</h3>
@@ -164,7 +166,7 @@
           <div class="team-card">
             <div class="card-image">
               <img src="{{url_for('static', filename='img/team/team1.jpg')}}" alt="John Kibe - CEO & Founder"
-                class="img-fluid h-100">
+                class="img-fluid">
               <div class="social-links">
                 <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin"></i></a>
                 <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -184,8 +186,8 @@
         <div class="col-lg-4 col-md-6">
           <div class="team-card">
             <div class="card-image">
-              <img src="{{url_for('static', filename='img/team/team2.jpg')}}" alt="Jane Smith - CTO"
-                class="img-fluid h-100">
+              <img src="{{url_for('static', filename='img/team/team2.jpg')}}" alt="Jane Smith - CTO" class="img-fluid"
+                loading="lazy">
               <div class="social-links">
                 <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin"></i></a>
                 <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -193,7 +195,7 @@
               </div>
             </div>
             <div class="card-info">
-              <h3 class="member-name">Jane Smith</h3>
+              <h3 class="member-name">Faith Joy</h3>
               <p class="member-role">CTO</p>
               <div class="member-bio">
                 <p>Tech visionary with 8+ years architecting scalable parking platforms. Led development of our
@@ -206,7 +208,7 @@
           <div class="team-card">
             <div class="card-image">
               <img src="{{url_for('static', filename='img/team/team3.jpg')}}" alt="Emily Johnson - Marketing Lead"
-                class="img-fluid">
+                class="img-fluid" loading="lazy">
               <div class="social-links">
                 <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin"></i></a>
                 <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>

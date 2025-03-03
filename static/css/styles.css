@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap');
+
 :root {
   --primary-color: #f5cd05;
   --secondary-color: #141414;
+  --font-size: 16px;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
 }
 
 * {
@@ -10,35 +15,14 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
   background: var(--secondary-color);
-
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.login-btn {
-  background: var(--primary-color);
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-weight: bold;
 }
 
 .glossy-bg {
@@ -47,15 +31,6 @@ body {
   backdrop-filter: blur(8px);
   border-radius: 12px;
   padding: 1rem;
-}
-
-.cta-btn {
-  background: var(--primary-color);
-  border: none;
-  padding: 15px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  font-weight: bold;
 }
 
 .booking-form {
@@ -70,6 +45,7 @@ input,
 select {
   border: none;
   border-radius: 5px;
+  font-family: var(--font-heading);
 }
 
 label {
@@ -81,13 +57,13 @@ label {
 .book-now {
   background-color: var(--primary-color);
   cursor: pointer;
+  font-family: var(--font-heading);
 }
 
-/* Hero Section */
 .hero-section {
   background: url('../img/bg-image.webp') center center/cover no-repeat;
   color: #fff;
-  height: 50vh;
+  height: 60vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -112,7 +88,18 @@ label {
 
 .section-title {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 700;
+  font-family: var(--font-heading) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading) !important;
+  font-weight: 700;
 }
 
 .feature-card {
@@ -402,4 +389,43 @@ footer {
 .fa-headset,
 .fa-star {
   color: var(--primary-color);
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--primary-color);
+}
+
+.text {
+  font-style: italic;
+  color: #555;
 }

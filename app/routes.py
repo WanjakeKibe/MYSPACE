@@ -54,6 +54,11 @@ def plans():
     return render_template('plans.html')
 
 
+@main.route('/testimonials')
+def testimonials():
+    return render_template('testimonials.html')
+
+
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -211,7 +216,3 @@ def update_booking_status(booking_id):
         "booking_id": booking.id,
         "status": booking.status
     }), 200
-
-@main.routes('/testimonials')
-def testimonials():
- return render_template('testimonials.html')

@@ -5,33 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% block title %}EASY PARK{% endblock %}</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo.webp') }}" type="image/x-icon">
   <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-
-    footer {
-      background: #222;
-      color: #ccc;
-    }
-  </style>
   {% block extra_head %}{% endblock %}
 </head>
 
 <body>
   {% block header %}
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
       <div class="container">
         <a class="navbar-brand fw-bold text-white" href="{{ url_for('main.home') }}">
-          EASY <span class="text-warning">PARK</span>
+          EASY<span class="text-warning">PARK</span>
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +34,7 @@
               <a class="nav-link text-white" href="{{ url_for('main.plans') }}">Plan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href=" {{ url_for('main.testimonials') }}
+              <a class="nav-link text-white" href=" {{ url_for('main.testimonials') }}
               ">Testimonials</a>
             </li>
 
@@ -96,7 +84,7 @@
       <div class="row g-4">
         <!-- Contact Info -->
         <div class="col-md-4 mb-4">
-          <h5 class="text-uppercase mb-4">Contact Us</h5>
+          <h5 class="text-uppercase mb-4 fw-bold">Contact Us</h5>
           <ul class="list-unstyled">
             <li class="mb-3">
               <i class="fas fa-map-marker-alt me-2"></i>
@@ -115,19 +103,19 @@
 
         <!-- Quick Links -->
         <div class="col-md-2 mb-4">
-          <h5 class="text-uppercase mb-4">Quick Links</h5>
+          <h5 class="text-uppercase mb-4 fw-bold">Quick Links</h5>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="{{url_for('main.home')}}" class="text-light">Home</a></li>
             <li class="mb-2"><a href="{{url_for('main.about')}}" class="text-light">About Us</a></li>
             <li class="mb-2"><a href="{{url_for('main.plans')}}" class="text-light">Plans</a></li>
-            <li class="mb-2"><a href=" {{ url_for('main.testimonials') }}
+            <li class="mb-2"><a href=" {{ url_for('main.testimonials')}}
                   " class="text-light">Testimonials</a></li>
           </ul>
         </div>
 
         <!-- Social Media -->
         <div class="col-md-3 mb-4">
-          <h5 class="text-uppercase mb-4">Follow Us</h5>
+          <h5 class="text-uppercase mb-4 fw-bold">Follow Us</h5>
           <div class="d-flex gap-3">
             <a href="#" class="text-light fs-5" aria-label="Facebook">
               <i class="fab fa-facebook"></i>
@@ -146,7 +134,7 @@
 
         <!-- Newsletter -->
         <div class="col-md-3 mb-4">
-          <h5 class="text-uppercase mb-4">Newsletter</h5>
+          <h5 class="text-uppercase mb-4 fw-bold">Newsletter</h5>
           <form>
             <div class="input-group">
               <input type="email" class="form-control" placeholder="Enter email">
