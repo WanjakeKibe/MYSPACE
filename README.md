@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Parking Lot Booking System is a web application that allows users to book parking slots online. Users can sign up, log in, and reserve slots based on available locations. The system also supports managing bookings, including canceling reservations.
+The Parking Lot Booking System is a web application that allows users to book parking slots online. Users can sign up, log in, and reserve slots based on available locations. The system also supports managing bookings.
 
 ## Features
 
