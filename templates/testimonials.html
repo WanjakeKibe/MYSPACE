@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testimonials</title>
+    <style>
+        
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #f8f9fa;
+            --font-size: 16px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Ensure the correct class name is used */
+        .testimonial {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            font-weight: bold;
+            margin-top: 10px;
+            color: var(--primary-color);
+        }
+
+        .text {
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <img src="imgs/download.jpg" alt="User">
+                <p class="text">"Great service and support! Highly recommend!"</p>
+                <p class="name">- Alex Johnson</p>
+            </div>
+            <div class="testimonial">
+                <img src="imgs/download (1).jpg" alt="User">
+                <p class="text">"Amazing experience, very satisfied with the results!"</p>
+                <p class="name">- Joshua Mike</p>
+            </div>
+            <div class="testimonial">
+                <img src="imgs/download3.jpg" alt="User">
+                <p class="text">"Fast and reliable service. Will use again!"</p>
+                <p class="name">- Michael Smith</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
