@@ -211,3 +211,7 @@ def update_booking_status(booking_id):
         "booking_id": booking.id,
         "status": booking.status
     }), 200
+    @main.routes('/testimonials')
+def testimonials():
+    return render_template('testimonials.html')
+        {{ url_for('main.testimonials') }}
