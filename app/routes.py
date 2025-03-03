@@ -214,4 +214,4 @@ def update_booking_status(booking_id):
     @main.routes('/testimonials')
 def testimonials():
     return render_template('testimonials.html')
-        {{ url_for('main.testimonials') }}
+       
