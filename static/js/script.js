@@ -24,6 +24,8 @@ const parkingLocations = [
 
 const locationSelect = document.getElementById("location");
 
+locationSelect.innerHTML = "";
+
 parkingLocations.forEach(parking => {
   let option = document.createElement("option");
   option.value = parking.id;

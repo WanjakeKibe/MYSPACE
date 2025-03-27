@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Manage Parking Locations</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h2>Manage Parking Locations</h2>
+
+    <!-- Add Parking Location Form -->
+    <form id="addLocationForm" class="mb-4">
+      <div class="mb-3">
+        <label for="name" class="form-label">Parking Name</label>
+        <input type="text" class="form-control" id="location-name" placeholder="Parking Name" required>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control" id="location-address" placeholder="Location Address" required>
+      </div>
+      <button type="submit" class="btn btn-warning">Add Location</button>
+    </form>
+
+    <!-- Parking Locations Table -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="locations-table-body">
+        <!-- Rows will be populated here by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("add-location-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent full page reload
+
+      const name = document.getElementById("location-name").value;
+      const location = document.getElementById("location-address").value;
+
+      fetch("/api/admin/locations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, location })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.error) {
+            alert(data.error);
+            return;
+          }
+
+          // ✅ Dynamically Add New Location to the Table
+          const tableBody = document.getElementById("locations-table-body");
+          const newRow = document.createElement("tr");
+          newRow.innerHTML = `
+            <td>${data.id}</td>
+            <td>${name}</td>
+            <td>${location}</td>
+            <td><button class="btn btn-danger btn-sm" onclick="deleteLocation(${data.id})">Delete</button></td>
+        `;
+          tableBody.appendChild(newRow);
+
+          // ✅ Clear form inputs
+          document.getElementById("location-name").value = "";
+          document.getElementById("location-address").value = "";
+        })
+        .catch(error => console.error("Error adding location:", error));
+    });
+  </script>
+
+</body>
+
+</html>

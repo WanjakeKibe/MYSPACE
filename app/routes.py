@@ -1,3 +1,4 @@
+from flask import session, redirect, url_for, flash
 from flask import Blueprint, request, jsonify, session, flash, render_template, url_for, redirect, get_flashed_messages
 from .forms import LoginForm, SignupForm
 from .models import db, ParkingSpot, Booking, User
@@ -6,6 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 main = Blueprint('main', __name__)
+admin = Blueprint('admin', __name__)
 
 INACTIVITY_TIMEOUT = timedelta(minutes=15)
 
@@ -216,3 +218,73 @@ def update_booking_status(booking_id):
         "booking_id": booking.id,
         "status": booking.status
     }), 200
+
+
+@main.route('/admin')
+def admin_dashboard():
+    if 'user_id' not in session:
+        flash("You must log in first.", "danger")
+        return redirect(url_for('main.login'))
+
+    user = User.query.get(session['user_id'])
+    if not user or not user.is_admin:
+        flash("Access denied!", "danger")
+        return redirect(url_for('main.home'))
+
+    return render_template('admin.html')
+
+
+@admin.route('/locations', methods=['GET'])
+def get_locations():
+    locations = ParkingSpot.query.all()
+
+    if not locations:
+        return jsonify([])  # Return an empty list instead of error
+
+    try:
+        return jsonify([
+            {"id": loc.id, "name": loc.name, "location": loc.location}
+            for loc in locations
+        ])
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500  # Return any errors as JSON
+
+
+@admin.route('/locations', methods=['POST'])
+def add_location():
+    data = request.get_json()
+    if not data.get('name') or not data.get('location'):
+        return jsonify({"error": "Name and location are required"}), 400
+
+    new_location = ParkingSpot(name=data['name'], location=data['location'])
+    db.session.add(new_location)
+    db.session.commit()
+    return jsonify({"message": "Parking location added successfully", "id": new_location.id}), 201
+
+
+@admin.route('/locations/<int:id>', methods=['PUT'])
+def update_location(id):
+    location = ParkingSpot.query.get(id)
+    if not location:
+        return jsonify({"error": "Location not found"}), 404
+
+    data = request.get_json()
+    location.name = data.get('name', location.name)
+    location.location = data.get('location', location.location)
+    db.session.commit()
+
+    return jsonify({"message": "Parking location updated successfully"})
+
+# Delete a parking location
+
+
+@admin.route('/locations/<int:id>', methods=['DELETE'])
+def delete_location(id):
+    location = ParkingSpot.query.get(id)
+    if not location:
+        return jsonify({"error": "Location not found"}), 404
+
+    db.session.delete(location)
+    db.session.commit()
+
+    return jsonify({"message": "Parking location deleted successfully"})
